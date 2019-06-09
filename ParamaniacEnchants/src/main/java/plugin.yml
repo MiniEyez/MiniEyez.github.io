@@ -1,0 +1,7 @@
+name: ParamaniacEnchants
+main: io.github.minieyez.paramaniacenchants.ParamaniacEnchants
+version: 1.0
+description: Developed by MiDSama
+depend: [WorldGuard, WorldEdit, Vault]
+commands:
+    paramaniacenchants:
