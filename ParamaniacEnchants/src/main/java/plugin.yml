@@ -1,7 +1,8 @@
 name: ParamaniacEnchants
 main: io.github.minieyez.paramaniacenchants.ParamaniacEnchants
-version: 1.0
-description: Developed by MiDSama
+version: 1.1
+description: Custom enchants made for Paramaniac Network!
+author: MiDSama
 depend: [WorldGuard, WorldEdit, Vault]
 commands:
     paramaniacenchants:
