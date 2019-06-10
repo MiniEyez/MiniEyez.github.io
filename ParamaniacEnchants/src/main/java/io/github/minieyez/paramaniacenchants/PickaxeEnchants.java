@@ -20,6 +20,7 @@ import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.flags.DefaultFlag;
 import com.sk89q.worldguard.protection.flags.StateFlag;
+import com.sk89q.worldguard.protection.flags.StateFlag.State;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 
 import net.md_5.bungee.api.ChatColor;
@@ -97,15 +98,18 @@ public class PickaxeEnchants {
 					ApplicableRegionSet set = regionManager.getApplicableRegions(loc);
 
 					if (set.queryState(worldGuard.wrapPlayer(p), DefaultFlag.DAMAGE_ANIMALS) == StateFlag.State.DENY) {
-						main.sendDebugMessage("state");
-						if (blockLoc.getWorld().getName().equals("tempspawn")) {
-							main.sendDebugMessage("world");
-							if (loc.getBlock().getType() != Material.BEDROCK) {
-								main.sendDebugMessage("Block added to array .explosion_Square");
-								blocks.add(loc.getBlock());
-							}
+						if (set.queryState(worldGuard.wrapPlayer(p), DefaultFlag.BLOCK_BREAK) == State.ALLOW) {
+							main.sendDebugMessage("state");
+							if (blockLoc.getWorld().getName().equals("tempspawn")) {
+								main.sendDebugMessage("world");
+								if (loc.getBlock().getType() != Material.BEDROCK) {
+									main.sendDebugMessage("Block added to array .explosion_Square");
+									blocks.add(loc.getBlock());
+								}
 
+							}
 						}
+
 					}
 
 				}
@@ -227,15 +231,18 @@ public class PickaxeEnchants {
 					ApplicableRegionSet set = regionManager.getApplicableRegions(loc);
 
 					if (set.queryState(worldGuard.wrapPlayer(p), DefaultFlag.DAMAGE_ANIMALS) == StateFlag.State.DENY) {
-						main.sendDebugMessage("query state!");
-						if (blockLoc.getWorld().getName().equals("tempspawn")) {
-							main.sendDebugMessage("world!");
-							if (loc.getBlock().getType() != Material.BEDROCK) {
-								main.sendDebugMessage("Block added to array .explosion_Circle");
-								blocks.add(loc.getBlock());
-							}
+						if (set.queryState(worldGuard.wrapPlayer(p), DefaultFlag.BLOCK_BREAK) == State.ALLOW) {
+							main.sendDebugMessage("query state!");
+							if (blockLoc.getWorld().getName().equals("tempspawn")) {
+								main.sendDebugMessage("world!");
+								if (loc.getBlock().getType() != Material.BEDROCK) {
+									main.sendDebugMessage("Block added to array .explosion_Circle");
+									blocks.add(loc.getBlock());
+								}
 
+							}
 						}
+						
 					}
 				}
 			}
