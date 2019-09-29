@@ -1,0 +1,8 @@
+name: ParamaniacCrates
+main: io.github.minieyez.paramaniaccrates.ParamaniacCrates
+version: 1.0
+description: A custom crates plugin for Paramaniac Network!
+author: MiDSama
+commands:
+    crate:
+        aliases: [crates]
